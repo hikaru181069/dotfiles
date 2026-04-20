@@ -1,6 +1,10 @@
+# tmux plugins
 .config/tmux/plugins/
+
+# fish
 .config/fish/fish_history
-.config/.git/
+
+# python
 .venv/
 __pycache__/
 .python-version
