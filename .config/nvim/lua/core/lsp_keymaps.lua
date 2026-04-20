@@ -24,7 +24,7 @@ function M.on_attach(_, bufnr)
 		})
 	end, "Format")
 
-	map("n", "<leader>e", vim.diagnostic.open_float, "Line diagnostics")
+	map("n", "<leader>gl", vim.diagnostic.open_float, "Line diagnostics")
 	map("n", "[d", vim.diagnostic.goto_prev, "Prev diagnostic")
 	map("n", "]d", vim.diagnostic.goto_next, "Next diagnostic")
 end
