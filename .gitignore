@@ -1,0 +1,8 @@
+# fish
+.config/fish/fish_history
+
+# python / uv
+.venv/
+__pycache__/
+.python-version
+uv.lock
