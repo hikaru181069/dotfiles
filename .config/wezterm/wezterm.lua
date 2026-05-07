@@ -7,7 +7,7 @@ config.font = wezterm.font_with_fallback({
 	"Noto Color Emoji",
 })
 
-config.font_size = 21.0
+config.font_size = 20.0
 
 config.colors = {
 	cursor_bg = "#7f849c", -- カーソル本体の色

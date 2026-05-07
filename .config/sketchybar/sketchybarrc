@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+# FelixKratz dotfiles inspired SketchyBar config.
+# yabai/skhd/GitHub/Spotify/helper dependencies are intentionally omitted.
+
+source "$HOME/.config/sketchybar/colors.sh"
+source "$HOME/.config/sketchybar/icons.sh"
+
+ITEM_DIR="$HOME/.config/sketchybar/items"
+PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
+FONT="Maple Mono NF"
+PADDINGS=4
+
+# Re-loading this file should not duplicate old items.
+sketchybar --remove '/.*/' >/dev/null 2>&1
+
+bar=(
+  height=40
+  #color="$BAR_COLOR"
+   color=0x00000000
+  shadow=off
+  position=top
+  sticky=on
+  padding_right=0
+  padding_left=0
+  corner_radius=9
+  y_offset=0
+  margin=10
+  blur_radius=20
+  notch_width=0
+)
+
+sketchybar --bar "${bar[@]}"
+
+defaults=(
+  updates=when_shown
+  icon.font="$FONT:Bold:15.0"
+  icon.color="$ICON_COLOR"
+  icon.padding_left="$PADDINGS"
+  icon.padding_right="$PADDINGS"
+  label.font="$FONT:Bold:12.0"
+  label.color="$LABEL_COLOR"
+  label.padding_left="$PADDINGS"
+  label.padding_right="$PADDINGS"
+  padding_right="$PADDINGS"
+  padding_left="$PADDINGS"
+  background.height=30
+  background.corner_radius=9
+  popup.background.border_width=2
+  popup.background.corner_radius=9
+  popup.background.border_color="$POPUP_BORDER_COLOR"
+  popup.background.color="$POPUP_BACKGROUND_COLOR"
+  popup.blur_radius=20
+  popup.background.shadow.drawing=on
+)
+
+sketchybar --default "${defaults[@]}"
+
+# Left
+source "$ITEM_DIR/apple.sh"
+source "$ITEM_DIR/spaces.sh"
+source "$ITEM_DIR/front_app.sh"
+
+# Right
+source "$ITEM_DIR/status.sh"
+
+sketchybar --update
+echo "sketchybar configuration loaded"

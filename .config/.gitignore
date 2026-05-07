@@ -1,11 +1,20 @@
 # tmux plugins
-.config/tmux/plugins/
+tmux/plugins/
 
 # fish
-.config/fish/fish_history
+fish/fish_history
 
 # python
 .venv/
 __pycache__/
 .python-version
 uv.lock
+
+# generated logs/state
+nvim/nvim.log
+cagent/
+uv/
+
+# disabled window-manager configs
+yabai/
+skhd/
