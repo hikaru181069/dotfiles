@@ -7,15 +7,19 @@ config.font = wezterm.font_with_fallback({
 	"Noto Color Emoji",
 })
 
-config.font_size = 20.0
+config.font_size = 19.5
 
 config.colors = {
-	cursor_bg = "#7f849c", -- カーソル本体の色
-	cursor_fg = "#1e1e2e", -- カーソル上の文字色
-	cursor_border = "#7f849c", -- 枠線 or Bar/Underline の色
+	cursor_bg = "#7f849c",
+	cursor_fg = "#1e1e2e",
+	cursor_border = "#7f849c",
 }
 
 config.color_scheme = "Catppuccin Mocha"
+
+-- 起動時のウィンドウサイズ
+config.initial_cols = 130
+config.initial_rows = 38
 
 -- transparent
 -- config.window_background_opacity = 0.9

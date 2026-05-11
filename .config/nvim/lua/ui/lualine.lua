@@ -20,7 +20,7 @@ return {
 			}
 
 			local mode_colors = {
-				n = "#bac2de",
+				n = "#585b70",
 				i = "#94e2d5",
 				v = "#cba6f7",
 				V = "#cba6f7",
@@ -30,7 +30,7 @@ return {
 			}
 
 			local mode_sep_colors = {
-				n = "#cdd6f4",
+				n = "#6c7086",
 				i = "#bceee6",
 				v = "#dcc6fa",
 				V = "#dcc6fa",
@@ -151,7 +151,7 @@ return {
 				}
 			end
 
-			local function seg_left_2(bg)
+			local function sep_left_thin_2(bg)
 				return {
 					function()
 						return ""
@@ -201,6 +201,16 @@ return {
 				}
 			end
 
+			local function sep_left_thin(sep_fg, sep_bg)
+				return {
+					function()
+						return ""
+					end,
+					color = { fg = sep_fg, bg = sep_bg },
+					padding = { left = 0, right = 0 },
+				}
+			end
+
 			require("lualine").setup({
 				options = {
 					theme = "auto",
@@ -215,13 +225,13 @@ return {
 				sections = {
 					lualine_a = {
 						seg_right_dynamic(mode_label, true),
-						sep_right_mode("#a6adc8"),
-						sep_right("#a6adc8", "#9399b2"),
+						sep_right_mode(C.dark),
+						--[[	sep_right("#a6adc8", "#9399b2"),
 						sep_right("#9399b2", "#7f849c"),
 						sep_right("#7f849c", "#6c7086"),
 						sep_right("#6c7086", "#585b70"),
 						sep_right("#585b70", C.dark),
-						--						sep_right_mode(C.steel),
+												sep_right_mode(C.steel), --]]
 					},
 
 					lualine_b = {
@@ -262,29 +272,26 @@ return {
 					},
 
 					lualine_x = {
-						sep_left("#9399b2", C.base),
+						--[[	sep_left("#9399b2", C.base),
 						sep_left("#7f849c", "#9399b2"),
 						sep_left("#6c7086", "#7f849c"),
 						sep_left("#585b70", "#6c7086"),
 						sep_left("#313244", "#585b70"),
-						sep_left(C.dark, "#313244"),
+						sep_left(C.dark, "#313244"), --]]
+						sep_left_thin(C.fog, C.dark),
 						seg_left(C.dark, C.fog, "filetype", true),
 					},
 
 					lualine_y = {
-						sep_left("#313244", C.dark),
-						sep_left("#585b70", "#313244"),
-						sep_left("#6c7086", "#585b70"),
-						sep_left("#7f849c", "#6c7086"),
-						sep_left("#9399b2", "#7f849c"),
-						sep_left("#a6adc8", "#9399b2"),
+						sep_left(C.dark, C.dark),
+						sep_left_thin(C.fog, C.dark),
 					},
 
 					lualine_z = {
 						--sep_left_mode("#ae81ff"),
 						--seg_left_2(mode_bg()),
-						seg_left("#a6adc8", C.dark, "progress", true),
-						sep_left_mode("#a6adc8"),
+						seg_left(C.dark, C.fog, "progress", true),
+						sep_left_mode(C.dark),
 						seg_left_dynamic("location", true),
 					},
 				},

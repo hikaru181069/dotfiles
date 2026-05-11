@@ -22,8 +22,8 @@ for i in "${!SPACE_ICONS[@]}"; do
 done
 
 spaces=(
-  background.color="$BACKGROUND_1"
-  background.border_color="$BACKGROUND_2"
+  background.color="$TRANSPARENT"
+  background.border_color="$TRANSPARENT"
   background.border_width=2
   background.drawing=on
 )
@@ -31,7 +31,7 @@ spaces=(
 separator=(
   icon="$SEPARATOR"
   icon.font="$FONT:Bold:14.0"
-  icon.color="$GREY"
+  icon.color="$BLACK"
   padding_left=8
   padding_right=10
   label.drawing=off
@@ -39,5 +39,5 @@ separator=(
 
 sketchybar --add bracket spaces '/space\..*/' \
            --set spaces "${spaces[@]}" \
-           --add item separator left \
-           --set separator "${separator[@]}"
+           #--add item separator left \
+           #--set separator "${separator[@]}"

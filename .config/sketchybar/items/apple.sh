@@ -8,10 +8,10 @@ apple=(
   label.drawing=off
   padding_left=6
   padding_right=10
-  background.color="$BACKGROUND_1"
-  background.border_color="$BACKGROUND_2"
+  background.color="$TRANSPARENT"
+  background.border_color="$TRANSPARENT"
   background.border_width=2
 )
 
 sketchybar --add item apple left \
-           --set apple "${apple[@]}"
+           --set apple "${apple[@]}"\

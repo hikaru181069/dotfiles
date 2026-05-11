@@ -17,7 +17,7 @@ sketchybar --remove '/.*/' >/dev/null 2>&1
 bar=(
   height=40
   #color="$BAR_COLOR"
-   color=0x00000000
+  color=0x00000000
   shadow=off
   position=top
   sticky=on
